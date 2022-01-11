@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.49.0'
+project:
+    name: CE_Test
+    package:
+        name: CE_Test
+        api_version: '52.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/CE_Test/tests
+            options:
+                outputdir: robot/CE_Test/results
+
+    robot_testdoc:
+        options:
+            path: robot/CE_Test/tests
+            output: robot/CE_Test/doc/CE_Test_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
